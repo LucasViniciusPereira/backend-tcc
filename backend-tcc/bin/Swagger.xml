@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>backend-tcc</name>
+        <name>backend-tcc.api</name>
     </assembly>
     <members>
         <member name="M:backend_tcc.Controllers.AccountController.Register(backend_tcc.Models.RegisterBindingModel)">
@@ -12,6 +12,48 @@
             <remarks>Adds new user to application and grant access</remarks>
             <response code="400">Bad Request</response>
             <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:backend_tcc.Controllers.AccountController.Authenticate(System.String,System.String)">
+            <summary>
+            Realizar a autenticação dos usuários
+            </summary>
+            <param name="user">Usuário</param>
+            <param name="password">Senha</param>
+            <returns>Token de acesso a API</returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.UserController.Create">
+            <summary>
+            Responsável por criar um novo usuário
+            </summary>
+            <returns>Nova instância de usuário</returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.UserController.Get(System.String)">
+            <summary>
+            Responsável por buscar o usuário
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.UserController.Put(backend_tcc.ms.administrador.Models.UserModel)">
+            <summary>
+            Responsável por atualizar o usuário
+            </summary>
+            <param name="user">Usuário</param>
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.UserController.Delete(System.String)">
+            <summary>
+            Responsável por excluir o usuário
+            </summary>
+            <param name="user">Usuário</param>
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.UserController.Create(backend_tcc.ms.administrador.Models.UserModel)">
+            <summary>
+            Responsável por gravar usuário
+            </summary>
+            <param name="user">Usuário</param>
+            <returns></returns>
         </member>
     </members>
 </doc>
