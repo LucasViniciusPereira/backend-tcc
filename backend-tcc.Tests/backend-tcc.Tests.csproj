@@ -52,9 +52,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\backend-tcc\backend-tcc.ms.administrador.csproj">
+    <ProjectReference Include="..\backend-tcc\backend-tcc.api.csproj">
       <Project>{60C0714D-612B-466B-A4D5-5E88C3FDBD84}</Project>
-      <Name>backend-tcc.ms.administrador</Name>
+      <Name>backend-tcc.api</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

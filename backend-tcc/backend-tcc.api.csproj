@@ -144,8 +144,18 @@
     <Compile Include="App_Start\HangfireBootstrapper.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\Administrador\AccountController.cs" />
+    <Compile Include="Controllers\Compras\FornecedorController.cs" />
+    <Compile Include="Controllers\Compras\OrcamentoController.cs" />
+    <Compile Include="Controllers\Administrador\UserController.cs" />
+    <Compile Include="Controllers\Estoques\EstoqueController.cs" />
+    <Compile Include="Controllers\Estoques\ProdutoController.cs" />
+    <Compile Include="Controllers\Logistica\EntregaController.cs" />
+    <Compile Include="Controllers\Logistica\VeiculoController.cs" />
+    <Compile Include="Controllers\Marketing\PromocaoController.cs" />
+    <Compile Include="Controllers\Marketing\PropagandaController.cs" />
+    <Compile Include="Controllers\Vendas\ClienteController.cs" />
+    <Compile Include="Controllers\Vendas\PedidoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -164,6 +174,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\Administrador\" />
+    <Folder Include="Models\Compras\" />
+    <Folder Include="Models\Estoques\" />
+    <Folder Include="Models\Logistica\" />
+    <Folder Include="Models\Marketing\" />
+    <Folder Include="Models\Vendas\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
