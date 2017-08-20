@@ -7,6 +7,7 @@ using System.Web.Http;
 
 namespace backend_tcc.ms.administrador.Controllers
 {
+    [RoutePrefix("api/orcamento")]
     public class OrcamentoController : ApiController
     {
     }

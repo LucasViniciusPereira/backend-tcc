@@ -7,6 +7,7 @@ using System.Web.Http;
 
 namespace backend_tcc.ms.administrador.Controllers
 {
+    [RoutePrefix("api/entrega")]
     public class EntregaController : ApiController
     {
     }
