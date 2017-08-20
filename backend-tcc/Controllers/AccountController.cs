@@ -29,5 +29,21 @@ namespace backend_tcc.Controllers
             //IMPLEMENTATION OF CODE GOES HERE!!
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        /// Realizar a autenticação dos usuários
+        /// </summary>
+        /// <param name="user">Usuário</param>
+        /// <param name="password">Senha</param>
+        /// <returns>Token de acesso a API</returns>
+        [AllowAnonymous]
+        [Route("Authenticate")]
+        [ResponseType(typeof(RegisterBindingModel))]
+        [HttpPost]
+        public async Task<IHttpActionResult> Authenticate(string user, string password)
+        {
+            //IMPLEMENTATION OF CODE GOES HERE!!
+            throw new NotImplementedException();
+        }        
     }
 }
