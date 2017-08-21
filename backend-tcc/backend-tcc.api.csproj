@@ -143,6 +143,7 @@
     <Compile Include="App_Start\ApplicationPreload.cs" />
     <Compile Include="App_Start\HangfireBootstrapper.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="App_Start\TokenInspector.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Administrador\AccountController.cs" />
     <Compile Include="Controllers\Compras\FornecedorController.cs" />
@@ -159,6 +160,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Administrador\UserTokenModel.cs" />
     <Compile Include="Models\RegisterBindingModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -174,7 +176,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\Administrador\" />
     <Folder Include="Models\Compras\" />
     <Folder Include="Models\Estoques\" />
     <Folder Include="Models\Logistica\" />

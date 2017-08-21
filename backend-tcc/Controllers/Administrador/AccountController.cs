@@ -7,6 +7,10 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using System.Security.Claims;
+using backend_tcc.api.Models.Administrador;
 
 namespace backend_tcc.Controllers
 {
@@ -40,10 +44,36 @@ namespace backend_tcc.Controllers
         [Route("Authenticate")]
         [ResponseType(typeof(RegisterBindingModel))]
         [HttpPost]
-        public async Task<IHttpActionResult> Authenticate(string user, string password)
+        public async Task<UserTokenModel> Authenticate(string user, string password)
         {
             //IMPLEMENTATION OF CODE GOES HERE!!
             throw new NotImplementedException();
+
+            var plainTextSecurityKey = "tcc2017";
+            var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(plainTextSecurityKey));
+
+            var signingCredentials = new SigningCredentials(signingKey,
+                SecurityAlgorithms.HmacSha256Signature);
+
+            var claimsIdentity = new ClaimsIdentity(new List<Claim>()
+            {
+                new Claim(ClaimTypes.NameIdentifier, "myemail@myprovider.com"),
+                new Claim(ClaimTypes.Role, "Administrator"),
+            }, "Custom");
+
+            var securityTokenDescriptor = new SecurityTokenDescriptor()
+            {
+                Issuer = "http://my.tokenissuer.com",
+                Audience = "http://my.website.com",
+                Subject = claimsIdentity,
+                SigningCredentials = signingCredentials
+            };
+
+            var tokenHandler = new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler();
+            var plainToken = tokenHandler.CreateToken(securityTokenDescriptor);
+            var signedAndEncodedToken = tokenHandler.WriteToken(plainToken);
+
+            return new UserTokenModel() { Token = signedAndEncodedToken };
         }        
     }
 }
