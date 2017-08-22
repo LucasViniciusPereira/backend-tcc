@@ -1,54 +1,55 @@
-﻿//using Hangfire;
-//using System.Web.Hosting;
+﻿using Hangfire;
+using System.Web.Hosting;
+using System.Web.Http;
 
-//namespace backend_tcc.App_Start
-//{
-//    public class HangfireBootstrapper : IRegisteredObject
-//    {
-//        public static readonly HangfireBootstrapper Instance = new HangfireBootstrapper();
+namespace backend_tcc.App_Start
+{
+    public class HangfireBootstrapper : IRegisteredObject
+    {
+        public static readonly HangfireBootstrapper Instance = new HangfireBootstrapper();
 
-//        private readonly object _lockObject = new object();
-//        private bool _started;
+        private readonly object _lockObject = new object();
+        private bool _started;
 
-//        private BackgroundJobServer _backgroundJobServer;
+        private BackgroundJobServer _backgroundJobServer;
 
-//        private HangfireBootstrapper()
-//        {
-//        }
+        private HangfireBootstrapper()
+        {
+        }
 
-//        public void Start()
-//        {
-//            lock (_lockObject)
-//            {
-//                if (_started) return;
-//                _started = true;
+        public void Start()
+        {
+            lock (_lockObject)
+            {
+                if (_started) return;
+                _started = true;
 
-//                HostingEnvironment.RegisterObject(this);
+                HostingEnvironment.RegisterObject(this);
 
-//                GlobalConfiguration.Configuration
-//                    .UseSqlServerStorage("connection string");
-//                // Specify other options here
+                GlobalConfiguration.Configuration
+                    .UseSqlServerStorage("cnnEntities");
+                // Specify other options here
 
-//                _backgroundJobServer = new BackgroundJobServer();
-//            }
-//        }
+                _backgroundJobServer = new BackgroundJobServer();
+            }
+        }
 
-//        public void Stop()
-//        {
-//            lock (_lockObject)
-//            {
-//                if (_backgroundJobServer != null)
-//                {
-//                    _backgroundJobServer.Dispose();
-//                }
+        public void Stop()
+        {
+            lock (_lockObject)
+            {
+                if (_backgroundJobServer != null)
+                {
+                    _backgroundJobServer.Dispose();
+                }
 
-//                HostingEnvironment.UnregisterObject(this);
-//            }
-//        }
+                HostingEnvironment.UnregisterObject(this);
+            }
+        }
 
-//        void IRegisteredObject.Stop(bool immediate)
-//        {
-//            Stop();
-//        }
-//    }
-//}
+        void IRegisteredObject.Stop(bool immediate)
+        {
+            Stop();
+        }
+    }
+}

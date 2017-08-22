@@ -69,3 +69,4 @@ C:\Desenvolvimento\github\backend-tcc\backend-tcc\obj\Debug\backend-tcc.api.cspr
 C:\Desenvolvimento\github\backend-tcc\backend-tcc\obj\Debug\backend-tcc.api.csproj.CoreCompileInputs.cache
 C:\Desenvolvimento\github\backend-tcc\backend-tcc\obj\Debug\backend-tcc.api.dll
 C:\Desenvolvimento\github\backend-tcc\backend-tcc\obj\Debug\backend-tcc.api.pdb
+C:\Desenvolvimento\github\backend-tcc\backend-tcc\obj\Debug\backend-tcc.api.csprojResolveAssemblyReference.cache

@@ -1,0 +1,5 @@
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.logistica\bin\Debug\backend-tcc.bs.logistica.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.logistica\bin\Debug\backend-tcc.bs.logistica.pdb
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.logistica\obj\Debug\backend-tcc.bs.logistica.csproj.CoreCompileInputs.cache
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.logistica\obj\Debug\backend-tcc.bs.logistica.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.logistica\obj\Debug\backend-tcc.bs.logistica.pdb

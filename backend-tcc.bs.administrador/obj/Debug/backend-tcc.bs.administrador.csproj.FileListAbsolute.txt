@@ -1,0 +1,6 @@
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.administrador\bin\Debug\backend-tcc.bs.administrador.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.administrador\bin\Debug\backend-tcc.bs.administrador.pdb
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.administrador\obj\Debug\backend-tcc.bs.administrador.csprojResolveAssemblyReference.cache
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.administrador\obj\Debug\backend-tcc.bs.administrador.csproj.CoreCompileInputs.cache
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.administrador\obj\Debug\backend-tcc.bs.administrador.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.administrador\obj\Debug\backend-tcc.bs.administrador.pdb

@@ -1,0 +1,5 @@
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.compras\bin\Debug\backend-tcc.bs.compras.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.compras\bin\Debug\backend-tcc.bs.compras.pdb
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.compras\obj\Debug\backend-tcc.bs.compras.csproj.CoreCompileInputs.cache
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.compras\obj\Debug\backend-tcc.bs.compras.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.compras\obj\Debug\backend-tcc.bs.compras.pdb

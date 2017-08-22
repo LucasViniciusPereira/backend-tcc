@@ -1,0 +1,5 @@
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.estoque\bin\Debug\backend-tcc.bs.estoque.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.estoque\bin\Debug\backend-tcc.bs.estoque.pdb
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.estoque\obj\Debug\backend-tcc.bs.estoque.csproj.CoreCompileInputs.cache
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.estoque\obj\Debug\backend-tcc.bs.estoque.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.estoque\obj\Debug\backend-tcc.bs.estoque.pdb

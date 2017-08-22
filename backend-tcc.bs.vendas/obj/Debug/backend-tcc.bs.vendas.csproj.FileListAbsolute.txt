@@ -1,0 +1,5 @@
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.vendas\bin\Debug\backend-tcc.bs.vendas.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.vendas\bin\Debug\backend-tcc.bs.vendas.pdb
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.vendas\obj\Debug\backend-tcc.bs.vendas.csproj.CoreCompileInputs.cache
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.vendas\obj\Debug\backend-tcc.bs.vendas.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.vendas\obj\Debug\backend-tcc.bs.vendas.pdb

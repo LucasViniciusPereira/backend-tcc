@@ -1,0 +1,10 @@
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib.repository\obj\Debug\backend-tcc.lib.repository.csprojResolveAssemblyReference.cache
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib.repository\obj\Debug\backend-tcc.lib.repository.csproj.CoreCompileInputs.cache
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib.repository\bin\Debug\backend-tcc.lib.repository.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib.repository\bin\Debug\backend-tcc.lib.repository.pdb
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib.repository\bin\Debug\backend-tcc.lib.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib.repository\bin\Debug\Newtonsoft.Json.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib.repository\bin\Debug\backend-tcc.lib.pdb
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib.repository\bin\Debug\Newtonsoft.Json.xml
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib.repository\obj\Debug\backend-tcc.lib.repository.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib.repository\obj\Debug\backend-tcc.lib.repository.pdb
