@@ -70,3 +70,16 @@ C:\Desenvolvimento\github\backend-tcc\backend-tcc\obj\Debug\backend-tcc.api.cspr
 C:\Desenvolvimento\github\backend-tcc\backend-tcc\obj\Debug\backend-tcc.api.dll
 C:\Desenvolvimento\github\backend-tcc\backend-tcc\obj\Debug\backend-tcc.api.pdb
 C:\Desenvolvimento\github\backend-tcc\backend-tcc\obj\Debug\backend-tcc.api.csprojResolveAssemblyReference.cache
+C:\Desenvolvimento\github\backend-tcc\backend-tcc\bin\Hangfire.Core.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc\bin\Hangfire.SqlServer.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc\bin\Microsoft.Owin.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc\bin\Owin.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc\bin\Hangfire.Core.xml
+C:\Desenvolvimento\github\backend-tcc\backend-tcc\bin\Hangfire.SqlServer.xml
+C:\Desenvolvimento\github\backend-tcc\backend-tcc\bin\Microsoft.Owin.xml
+C:\Desenvolvimento\github\backend-tcc\backend-tcc\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Desenvolvimento\github\backend-tcc\backend-tcc\bin\es\Hangfire.Core.resources.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc\bin\zh\Hangfire.Core.resources.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc\bin\System.Web.Http.Owin.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc\bin\System.Web.Http.Owin.xml

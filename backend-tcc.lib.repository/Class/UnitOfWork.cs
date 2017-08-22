@@ -1,41 +1,64 @@
-﻿using backend_tcc.lib.repository.Interfaces;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using backend_tcc.lib.repository.Repository;
 
 namespace backend_tcc.lib.repository.Class
 {
-    public class UnitOfWork<TDatabaseFactory> : IUnitOfWorkGeneric<TDatabaseFactory>
-                            where TDatabaseFactory : IDatabaseFactory
+    public class UnitOfWork : IDisposable
     {
-        private readonly IDatabaseFactory databaseFactory;
-        private IUnitOfWork dataContext;
+        private readonly EFDbContext context;
+        private bool disposed;
+        private Dictionary<string, object> repositories;
 
-        public UnitOfWork(TDatabaseFactory databaseFactory)
+        public UnitOfWork(EFDbContext context)
         {
-            this.databaseFactory = databaseFactory;
-            this.dataContext = DataContext;
+            this.context = context;
         }
 
-        protected IUnitOfWork DataContext
+        public UnitOfWork()
         {
-            get { return dataContext ?? (dataContext = (IUnitOfWork)databaseFactory.GetContext()); }
+            context = new EFDbContext();
         }
 
-        public int Commit(string UserID)
+        public void Dispose()
         {
-            try
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        public void Save()
+        {
+            context.SaveChanges();
+        }
+
+        public virtual void Dispose(bool disposing)
+        {
+            if (!disposed)
             {
-                return DataContext.Commit(UserID);
+                if (disposing)
+                {
+                    context.Dispose();
+                }
             }
-            catch (Exception)
-            {
-                throw;
-            }
+            disposed = true;
         }
 
-
-        public void Rollback()
+        public Repository<T> Repository<T>() where T : class
         {
-            DataContext.Rollback();
+            if (repositories == null)
+            {
+                repositories = new Dictionary<string, object>();
+            }
+
+            var type = typeof(T).Name;
+
+            if (!repositories.ContainsKey(type))
+            {
+                var repositoryType = typeof(Repository<>);
+                var repositoryInstance = Activator.CreateInstance(repositoryType.MakeGenericType(typeof(T)), context);
+                repositories.Add(type, repositoryInstance);
+            }
+            return (Repository<T>)repositories[type];
         }
     }
 }

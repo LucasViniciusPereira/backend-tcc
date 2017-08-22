@@ -46,6 +46,6 @@ namespace backend_tcc
             SwaggerConfig.Register();
 
 
-        }       
+        }
     }
 }
