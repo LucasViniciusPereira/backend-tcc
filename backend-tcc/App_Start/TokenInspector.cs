@@ -38,7 +38,7 @@ namespace backend_tcc.api.App_Start
                 {
                     string token = keys.First();
 
-                    var plainTextSecurityKey = "tcc2017";
+                    var plainTextSecurityKey = "PosGraduacaoTcc2017WilsonDonizetti";
                     var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(plainTextSecurityKey));
 
                     var tokenHandler = new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler();

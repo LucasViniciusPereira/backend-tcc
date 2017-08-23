@@ -53,7 +53,7 @@ namespace backend_tcc.Controllers
             //IMPLEMENTATION OF CODE GOES HERE!!
             //throw new NotImplementedException();
 
-            var plainTextSecurityKey = "tcc2017";
+            var plainTextSecurityKey = "PosGraduacaoTcc2017WilsonDonizetti";
             var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(plainTextSecurityKey));
 
             var signingCredentials = new SigningCredentials(signingKey,
@@ -61,7 +61,7 @@ namespace backend_tcc.Controllers
 
             UnitOfWork unitOfWork = new UnitOfWork(new EFDbContext());
             var usuario = unitOfWork.Repository<Usuario>().Table.Where(c => c.UsuarioID == user && c.Senha == password).SingleOrDefault();
-            if (usuario != null)
+            if (usuario != null && usuario.Ativo)
             {
                 var claimsIdentity = new ClaimsIdentity(new List<Claim>()
                 {

@@ -32,8 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -52,6 +61,42 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\backend-tcc.bs.administrador\backend-tcc.bs.administrador.csproj">
+      <Project>{23722b8a-fdd4-47a7-bea3-077acb0207fc}</Project>
+      <Name>backend-tcc.bs.administrador</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\backend-tcc.bs.common\backend-tcc.bs.common.csproj">
+      <Project>{fda0ba55-1453-4f44-9b38-ec7f2e9104d0}</Project>
+      <Name>backend-tcc.bs.common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\backend-tcc.bs.compras\backend-tcc.bs.compras.csproj">
+      <Project>{0238c2ee-3fd3-4259-b6af-f35065a16bfc}</Project>
+      <Name>backend-tcc.bs.compras</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\backend-tcc.bs.estoque\backend-tcc.bs.estoque.csproj">
+      <Project>{9eee7543-6b9e-436a-b3c5-4b8207f2ec59}</Project>
+      <Name>backend-tcc.bs.estoque</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\backend-tcc.bs.logistica\backend-tcc.bs.logistica.csproj">
+      <Project>{33acf37e-63ca-47d6-9f91-bd54847c685d}</Project>
+      <Name>backend-tcc.bs.logistica</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\backend-tcc.bs.marketing\backend-tcc.bs.marketing.csproj">
+      <Project>{5a41174a-8a57-4719-aa11-f5ff9f557a34}</Project>
+      <Name>backend-tcc.bs.marketing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\backend-tcc.bs.vendas\backend-tcc.bs.vendas.csproj">
+      <Project>{1dfb91b6-6ad9-4515-8f21-b66753e31885}</Project>
+      <Name>backend-tcc.bs.vendas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\backend-tcc.lib.repository\backend-tcc.lib.repository.csproj">
+      <Project>{3248bc83-0756-4b9b-a7c0-310ef0c91cda}</Project>
+      <Name>backend-tcc.lib.repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\backend-tcc.lib\backend-tcc.lib.csproj">
+      <Project>{5a867196-4637-4e90-8390-19c74c0c9a49}</Project>
+      <Name>backend-tcc.lib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\backend-tcc\backend-tcc.api.csproj">
       <Project>{60C0714D-612B-466B-A4D5-5E88C3FDBD84}</Project>
       <Name>backend-tcc.api</Name>
@@ -59,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
