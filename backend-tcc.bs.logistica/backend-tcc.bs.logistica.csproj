@@ -45,5 +45,11 @@
     <Compile Include="Class\Veiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\backend-tcc.bs.vendas\backend-tcc.bs.vendas.csproj">
+      <Project>{1DFB91B6-6AD9-4515-8F21-B66753E31885}</Project>
+      <Name>backend-tcc.bs.vendas</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

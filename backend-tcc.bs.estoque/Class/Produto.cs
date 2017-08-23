@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using backend_tcc.bs.common.Class;
 
 namespace backend_tcc.bs.estoque.Class
 {
@@ -12,6 +8,9 @@ namespace backend_tcc.bs.estoque.Class
         public string Nome { get; set; }
         public string UN { get; set; }
         public int FabricanteID { get; set; }
-        
+        public virtual Fabricante Fabricante { get; set; }
+        public int? FornecedorID { get; set; }
+        public virtual Fornecedor Fornecedor { get; set; }
+        public decimal Preco { get; set; }
     }
 }

@@ -45,5 +45,15 @@
     <Compile Include="Class\Propaganda.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\backend-tcc.bs.common\backend-tcc.bs.common.csproj">
+      <Project>{FDA0BA55-1453-4F44-9B38-EC7F2E9104D0}</Project>
+      <Name>backend-tcc.bs.common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\backend-tcc.bs.estoque\backend-tcc.bs.estoque.csproj">
+      <Project>{9EEE7543-6B9E-436A-B3C5-4B8207F2EC59}</Project>
+      <Name>backend-tcc.bs.estoque</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

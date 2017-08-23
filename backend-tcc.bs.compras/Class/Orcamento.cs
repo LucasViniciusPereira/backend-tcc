@@ -1,8 +1,6 @@
-﻿using System;
+﻿using backend_tcc.bs.common.Class;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace backend_tcc.bs.compras.Class
 {
@@ -11,6 +9,9 @@ namespace backend_tcc.bs.compras.Class
         public int OrcamentoID { get; set; }
         public DateTime Data { get; set; }
         public int FornecedorID { get; set; }
+        public virtual Fornecedor Fornecedor { get; set; }
         public decimal Valor { get; set; }
+
+        public virtual ICollection<ItemOrcamento> Itens { get; set; }
     }
 }

@@ -40,12 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class\Fabricante.cs" />
-    <Compile Include="Class\Fornecedor.cs" />
     <Compile Include="Class\ItemOrcamento.cs" />
     <Compile Include="Class\Orcamento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\backend-tcc.bs.common\backend-tcc.bs.common.csproj">
+      <Project>{fda0ba55-1453-4f44-9b38-ec7f2e9104d0}</Project>
+      <Name>backend-tcc.bs.common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\backend-tcc.bs.estoque\backend-tcc.bs.estoque.csproj">
+      <Project>{9eee7543-6b9e-436a-b3c5-4b8207f2ec59}</Project>
+      <Name>backend-tcc.bs.estoque</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

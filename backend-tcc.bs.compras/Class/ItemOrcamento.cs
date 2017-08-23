@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using backend_tcc.bs.estoque.Class;
 
 namespace backend_tcc.bs.compras.Class
 {
@@ -10,7 +6,9 @@ namespace backend_tcc.bs.compras.Class
     {
         public int ItemOrcamentoID { get; set; }
         public int OrcamentoID { get; set; }
+        public virtual Orcamento Orcamento { get; set; }
         public int ProdutoID { get; set; }
+        public virtual Produto Produto { get; set; }
         public decimal Quantidade { get; set; }
         public decimal Valor { get; set; }
     }

@@ -1,8 +1,6 @@
-﻿using System;
+﻿using backend_tcc.bs.common.Class;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace backend_tcc.bs.marketing.Class
 {
@@ -13,5 +11,8 @@ namespace backend_tcc.bs.marketing.Class
         public DateTime DataInicio { get; set; }
         public DateTime DataFim { get; set; }
         public int? ClienteID { get; set; }
+        public virtual Cliente Cliente { get; set; }
+
+        public virtual ICollection<ItemPromocao> Itens { get; set; }
     }
 }

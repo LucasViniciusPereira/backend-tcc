@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using backend_tcc.bs.vendas.Class;
 
 namespace backend_tcc.bs.logistica.Class
 {
@@ -10,6 +6,8 @@ namespace backend_tcc.bs.logistica.Class
     {
         public int ItemEntregaID { get; set; }
         public int EntregaID { get; set; }
+        public virtual Entrega Entrega { get; set; }
         public int PedidoID { get; set; }
+        public virtual Pedido Pedido { get; set; }
     }
 }
