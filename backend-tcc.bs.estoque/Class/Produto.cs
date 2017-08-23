@@ -12,5 +12,6 @@ namespace backend_tcc.bs.estoque.Class
         public int? FornecedorID { get; set; }
         public virtual Fornecedor Fornecedor { get; set; }
         public decimal Preco { get; set; }
+        //public virtual Estoque Estoque { get; set; }
     }
 }

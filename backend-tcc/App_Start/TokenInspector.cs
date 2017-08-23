@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Security.Claims;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
+using backend_tcc.api.Models.Administrador;
 using Microsoft.IdentityModel.Tokens;
 
 namespace backend_tcc.api.App_Start
@@ -22,6 +24,7 @@ namespace backend_tcc.api.App_Start
             //Evitar que requisições específicas e de documentação SWASHBUCKLE sejam verificadas.
             if (request.RequestUri.Segments.Any(s => s.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries).Contains("swagger"))
                 || request.RequestUri.Segments.Any(s => s.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries).Contains("help"))
+                || request.RequestUri.Segments.Any(s => s.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries).Contains("hangfire"))
                 || request.RequestUri.ToString().ToLower().Contains("account/authenticate"))
                 return await base.SendAsync(request, cancellationToken);
 
@@ -56,82 +59,52 @@ namespace backend_tcc.api.App_Start
 
                     SecurityToken validatedToken;
 
-                    tokenHandler.ValidateToken(token,
+                    ClaimsPrincipal principal = tokenHandler.ValidateToken(token,
                         tokenValidationParameters, out validatedToken);
 
+                    if (principal == null || principal.Identity.IsAuthenticated == false)
+                    {
+                        #region Identidade do usuário ou máquina cliente inválida.
+                        
+                        var tokenMsg = new UserTokenModel()
+                        {
+                            Success = false,
+                            Token = null,
+                            Message = $"{(short)HttpStatusCode.Unauthorized} - {HttpStatusCode.Unauthorized.ToString()} (Identidade do usuário ou máquina cliente inválida.)"
+                        };
 
-                    var teste = tokenHandler.ReadToken(token);
+                        reply = request.CreateResponse(HttpStatusCode.Unauthorized, tokenMsg);
 
+                        //log.Info($"{token.User} - {token.IP} - {request.RequestUri.ToString()} - {tokenMsg.Message}");
 
-                    //ClaimsPrincipal principal = IdentityStore.CriarUsuarioClaim(user, "CustomAuthToken");
+                        return await Task.FromResult(reply);
 
-                    //bool requestIPMatchesTokenIP = true; //token.IP.Equals(request.GetClientIP());
-
-                    //if (user == null || principal == null || !requestIPMatchesTokenIP)
-                    //{
-                    //    #region Identidade do usuário ou máquina cliente inválida.
-
-                    //    tokenMsg = new TokenMessage
-                    //    {
-                    //        Success = false,
-                    //        Token = null,
-                    //        Message = $"{(short)HttpStatusCode.Unauthorized} - {HttpStatusCode.Unauthorized.ToString()} (Identidade do usuário ou máquina cliente inválida.)"
-                    //    };
-
-                    //    reply = request.CreateResponse(HttpStatusCode.Unauthorized, tokenMsg);
-
-                    //    log.Info($"{token.User} - {token.IP} - {request.RequestUri.ToString()} - {tokenMsg.Message}");
-
-                    //    return await Task.FromResult(reply);
-
-                    //    #endregion
-                    //}
-                    //else
-                    //{
-                    //    #region Se a data de expiração é anterior ao dia de hoje.
-
-                    //    if (DateTime.Now.CompareTo(token.Expire) > 0)
-                    //    {
-                    //        tokenMsg = new TokenMessage
-                    //        {
-                    //            Success = false,
-                    //            Token = null,
-                    //            Message = $"{(short)HttpStatusCode.Forbidden} - {HttpStatusCode.Forbidden.ToString()} (A data de validade do Token expirou, 7 dias.)"
-                    //        };
-
-                    //        reply = request.CreateResponse(HttpStatusCode.Forbidden, tokenMsg);
-
-                    //        log.Info($"{token.User} - {token.IP} - {request.RequestUri.ToString()} - {tokenMsg.Message}");
-
-                    //        return await Task.FromResult(reply);
-                    //    }
-
-                    //   #endregion
-                    //}
+                        #endregion
+                    }                    
 
                     //Set The User Principal
-                    //request.Properties.Add("MS_UserPrincipal", principal);
-                    //HttpContext.Current.User = principal;
-                    //Thread.CurrentPrincipal = principal;
+                    request.Properties.Add("MS_UserPrincipal", principal);
+                    HttpContext.Current.User = principal;
+                    Thread.CurrentPrincipal = principal;
                 }
                 catch (Exception ex)
                 {
                     #region Erro no processamento do Token.
 
-                    //string msgEx = (ex.Message.Length <= 100) ? ex.Message : string.Concat(ex.Message.Substring(0, 100), "...");
+                    string msgEx = (ex.Message.Length <= 100) ? ex.Message : string.Concat(ex.Message.Substring(0, 100), "...");
 
-                    //tokenMsg = new TokenMessage
-                    //{
-                    //    Success = false,
-                    //    Token = null,
-                    //    Message = $"{(short)HttpStatusCode.BadRequest} - {HttpStatusCode.BadRequest.ToString()} (Erro no processamento do Token. [{msgEx}])"
-                    //};
+                    var tokenMsg = new UserTokenModel()
+                    {
+                        Success = false,
+                        Token = null,
+                        Message = $"{(short)HttpStatusCode.BadRequest} - {HttpStatusCode.BadRequest.ToString()} (Erro no processamento do Token. [{msgEx}])"
+                    };
 
-                    //reply = request.CreateResponse(HttpStatusCode.BadRequest, tokenMsg);
+                    reply = request.CreateResponse(HttpStatusCode.BadRequest, tokenMsg);
 
                     //log.Info($"{request.RequestUri.ToString()} - {tokenMsg.Message}");
 
-                    //return await Task.FromResult(reply);
+                    return await Task.FromResult(reply);
 
                     #endregion
                 }
@@ -140,18 +113,18 @@ namespace backend_tcc.api.App_Start
             {
                 #region Token inexistente.
 
-                //tokenMsg = new TokenMessage
-                //{
-                //    Success = false,
-                //    Token = null,
-                //    Message = $"{(short)HttpStatusCode.ExpectationFailed} - {HttpStatusCode.ExpectationFailed.ToString()} (Token inexistente.)"
-                //};
+                var tokenMsg = new UserTokenModel
+                {
+                    Success = false,
+                    Token = null,
+                    Message = $"{(short)HttpStatusCode.ExpectationFailed} - {HttpStatusCode.ExpectationFailed.ToString()} (Token inexistente.)"
+                };
 
-                //reply = request.CreateResponse(HttpStatusCode.ExpectationFailed, tokenMsg);
+                reply = request.CreateResponse(HttpStatusCode.ExpectationFailed, tokenMsg);
 
                 //log.Info($"{request.RequestUri.ToString()} - {tokenMsg.Message}");
 
-                //return await Task.FromResult(reply);
+                return await Task.FromResult(reply);
 
                 #endregion
             }

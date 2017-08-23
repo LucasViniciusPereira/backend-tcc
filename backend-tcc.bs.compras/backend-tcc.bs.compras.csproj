@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Class\ItemOrcamento.cs" />
     <Compile Include="Class\Orcamento.cs" />
+    <Compile Include="Enumerators\eSituacaoOrcamento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

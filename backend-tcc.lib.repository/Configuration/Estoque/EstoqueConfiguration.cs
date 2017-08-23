@@ -12,8 +12,8 @@ namespace backend_tcc.lib.repository.Configuration
             Map(c => c.ToTable("Estoque"));
 
             HasRequired(c => c.Produto)
-                .WithMany()
-                .HasForeignKey(f => f.ProdutoID);
+                .WithRequiredDependent();
+                //.HasForeignKey(f => f.ProdutoID);
 
             HasMany(c => c.Lotes)
                 .WithOptional()

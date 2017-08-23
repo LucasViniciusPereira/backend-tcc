@@ -19,6 +19,10 @@ namespace backend_tcc.lib.repository.Configuration
             HasOptional(c => c.Fornecedor)
                 .WithMany()
                 .HasForeignKey(f => f.FornecedorID);
+
+            //HasRequired(c => c.Estoque)
+            //    .WithRequiredPrincipal(c => c.Produto);
+                //.HasForeignKey(f => f.ProdutoID);
         }
     }
 }

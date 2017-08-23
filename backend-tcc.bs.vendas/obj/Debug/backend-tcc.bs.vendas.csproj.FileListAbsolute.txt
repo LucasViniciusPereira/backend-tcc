@@ -3,3 +3,8 @@ C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.vendas\bin\Debug\backend-tc
 C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.vendas\obj\Debug\backend-tcc.bs.vendas.csproj.CoreCompileInputs.cache
 C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.vendas\obj\Debug\backend-tcc.bs.vendas.dll
 C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.vendas\obj\Debug\backend-tcc.bs.vendas.pdb
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.vendas\bin\Debug\backend-tcc.bs.common.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.vendas\bin\Debug\backend-tcc.bs.estoque.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.vendas\bin\Debug\backend-tcc.bs.common.pdb
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.vendas\bin\Debug\backend-tcc.bs.estoque.pdb
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.vendas\obj\Debug\backend-tcc.bs.vendas.csprojResolveAssemblyReference.cache

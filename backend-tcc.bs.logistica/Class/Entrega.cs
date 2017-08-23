@@ -8,7 +8,7 @@ namespace backend_tcc.bs.logistica.Class
         public int EntregaID { get; set; }
         public int VeiculoID { get; set; }
         public virtual Veiculo Veiculo { get; set; }
-        public DateTime Data { get; set; }
+        public DateTime DataEntrega { get; set; }
 
         public virtual ICollection<ItemEntrega> Itens { get; set; }
     }

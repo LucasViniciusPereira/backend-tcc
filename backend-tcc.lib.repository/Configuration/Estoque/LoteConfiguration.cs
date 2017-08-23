@@ -14,7 +14,7 @@ namespace backend_tcc.lib.repository.Configuration
 
             HasRequired(c => c.Fabricante)
                 .WithMany()
-                .HasForeignKey(f => f.Fabricante);
+                .HasForeignKey(f => f.FabricanteID);
 
             HasRequired(c => c.Produto)
                 .WithMany()

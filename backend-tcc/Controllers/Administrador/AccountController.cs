@@ -1,19 +1,23 @@
-﻿using backend_tcc.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using System.Security.Claims;
 using backend_tcc.api.Models.Administrador;
+using backend_tcc.bs.administrador.Class;
+using backend_tcc.lib.repository.Repository;
+using backend_tcc.Models;
+using Microsoft.IdentityModel.Tokens;
+using System.Linq;
+using backend_tcc.lib.repository.Class;
 
 namespace backend_tcc.Controllers
 {
+    /// <summary>
+    /// Api de Autenticação
+    /// </summary>
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {
@@ -42,12 +46,12 @@ namespace backend_tcc.Controllers
         /// <returns>Token de acesso a API</returns>
         [AllowAnonymous]
         [Route("Authenticate")]
-        [ResponseType(typeof(RegisterBindingModel))]
+        [ResponseType(typeof(UserTokenModel))]
         [HttpPost]
-        public async Task<UserTokenModel> Authenticate(string user, string password)
+        public UserTokenModel Authenticate(string user, string password)
         {
             //IMPLEMENTATION OF CODE GOES HERE!!
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
 
             var plainTextSecurityKey = "tcc2017";
             var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(plainTextSecurityKey));
@@ -55,25 +59,34 @@ namespace backend_tcc.Controllers
             var signingCredentials = new SigningCredentials(signingKey,
                 SecurityAlgorithms.HmacSha256Signature);
 
-            var claimsIdentity = new ClaimsIdentity(new List<Claim>()
+            UnitOfWork unitOfWork = new UnitOfWork(new EFDbContext());
+            var usuario = unitOfWork.Repository<Usuario>().Table.Where(c => c.UsuarioID == user && c.Senha == password).SingleOrDefault();
+            if (usuario != null)
             {
-                new Claim(ClaimTypes.NameIdentifier, "myemail@myprovider.com"),
-                new Claim(ClaimTypes.Role, "Administrator"),
-            }, "Custom");
+                var claimsIdentity = new ClaimsIdentity(new List<Claim>()
+                {
+                    new Claim(ClaimTypes.Name, usuario.Nome),
+                    new Claim(ClaimTypes.NameIdentifier, usuario.Nome),
+                    new Claim(ClaimTypes.Email, usuario.Email),
+                    new Claim(ClaimTypes.Role, "User"),
+                }, "Custom");
 
-            var securityTokenDescriptor = new SecurityTokenDescriptor()
-            {
-                Issuer = "http://my.tokenissuer.com",
-                Audience = "http://my.website.com",
-                Subject = claimsIdentity,
-                SigningCredentials = signingCredentials
-            };
+                var securityTokenDescriptor = new SecurityTokenDescriptor()
+                {
+                    Issuer = "http://my.tokenissuer.com",
+                    Audience = "http://my.website.com",
+                    Subject = claimsIdentity,
+                    SigningCredentials = signingCredentials
+                };
 
-            var tokenHandler = new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler();
-            var plainToken = tokenHandler.CreateToken(securityTokenDescriptor);
-            var signedAndEncodedToken = tokenHandler.WriteToken(plainToken);
+                var tokenHandler = new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler();
+                var plainToken = tokenHandler.CreateToken(securityTokenDescriptor);
+                var signedAndEncodedToken = tokenHandler.WriteToken(plainToken);
 
-            return new UserTokenModel() { Token = signedAndEncodedToken };
-        }        
+                return new UserTokenModel() { Success = true, Token = signedAndEncodedToken, Message = "Autenticado com sucesso" };
+            }
+            else
+                return new UserTokenModel() { Success = false, Message = "Não foi possível efeturar o login" };
+        }
     }
 }

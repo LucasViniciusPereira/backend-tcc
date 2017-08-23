@@ -1,4 +1,14 @@
-﻿CREATE TABLE Veiculo (
+﻿CREATE TABLE Usuario (
+	UsuarioID				VARCHAR(40) NOT NULL,
+	Nome					VARCHAR(100) NOT NULL,
+	Email					VARCHAR(100),
+	Senha					VARCHAR(200),
+	Ativo					BIT NOT NULL DEFAULT 0,
+	CONSTRAINT PK_Usuario PRIMARY KEY (UsuarioID)
+)
+INSERT INTO Usuario Values('usuario','Usuário de Teste', 'email@email.com', 'senha', 1);
+
+CREATE TABLE Veiculo (
 	VeiculoID				INT NOT NULL IDENTITY(1,1),
 	Nome					VARCHAR(100) NOT NULL,
 	Placa					VARCHAR(8) NOT NULL,
@@ -63,22 +73,6 @@ INSERT INTO Produto Values('Produto 1', 'UN', 1,1, 20.00);
 INSERT INTO Produto Values('Produto 2', 'KG', 2,2, 15.95);
 INSERT INTO Produto Values('Produto 3', 'L', 1,3, 11.21);
 
-CREATE TABLE Lote (
-	LoteID					INT NOT NULL IDENTITY(1,1),
-	ProdutoID				INT NOT NULL,
-	Validade				DATETIME NULL,
-	Codigo					VARCHAR(20) NOT NULL,
-	FabricanteID			INT NOT NULL,
-	Quantidade				DECIMAL(15,4) NOT NULL,
-	CONSTRAINT PK_Lote PRIMARY KEY (LoteID),
-	CONSTRAINT FK_Lote_Fabricante FOREIGN KEY (FabricanteID) REFERENCES Fabricante (FabricanteID),
-	CONSTRAINT FK_Lote_Produto FOREIGN KEY (ProdutoID) REFERENCES Produto (ProdutoID)
-)
-INSERT INTO Lote Values(1, '2017-08-22','ALKJ2014', 1, 10);
-INSERT INTO Lote Values(1, '2018-08-22','ALKJ2017', 1, 5);
-INSERT INTO Lote Values(2, '2017-12-22','BBHP2017', 2, 5);
-INSERT INTO Lote Values(3, '2018-08-22','LKJG2015', 1, 6);
-
 CREATE TABLE Estoque (
 	ProdutoID				INT NOT NULL,
 	Quantidade				DECIMAL(15,4) NOT NULL,
@@ -90,6 +84,22 @@ CREATE TABLE Estoque (
 INSERT INTO Estoque Values(1, 15, 5);
 INSERT INTO Estoque Values(2, 5, 5);
 INSERT INTO Estoque Values(3, 6, 6);
+
+CREATE TABLE Lote (
+	LoteID					INT NOT NULL IDENTITY(1,1),
+	ProdutoID				INT NOT NULL,
+	Validade				DATETIME NULL,
+	Codigo					VARCHAR(20) NOT NULL,
+	FabricanteID			INT NOT NULL,
+	Quantidade				DECIMAL(15,4) NOT NULL,
+	CONSTRAINT PK_Lote PRIMARY KEY (LoteID),
+	CONSTRAINT FK_Lote_Fabricante FOREIGN KEY (FabricanteID) REFERENCES Fabricante (FabricanteID),
+	CONSTRAINT FK_Lote_Estoque FOREIGN KEY (ProdutoID) REFERENCES Estoque (ProdutoID)
+)
+INSERT INTO Lote Values(1, '2017-08-22','ALKJ2014', 1, 10);
+INSERT INTO Lote Values(1, '2018-08-22','ALKJ2017', 1, 5);
+INSERT INTO Lote Values(2, '2017-12-22','BBHP2017', 2, 5);
+INSERT INTO Lote Values(3, '2018-08-22','LKJG2015', 1, 6);
 
 CREATE TABLE Promocao (
 	PromocaoID				INT NOT NULL IDENTITY(1,1),
@@ -170,3 +180,52 @@ INSERT INTO ItemPedido Values(3, 1, 2, 50, NULL, 2);
 INSERT INTO ItemPedido Values(4, 1, 2, 50, NULL, 1);
 INSERT INTO ItemPedido Values(5, 1, 2, 50, NULL, 2);
 INSERT INTO ItemPedido Values(6, 1, 2, 50, NULL, 1);
+
+CREATE TABLE SituacaoOrcamento (
+	SituacaoOrcamentoID		SMALLINT NOT NULL,
+	Descricao				VARCHAR(100) NOT NULL,	
+	CONSTRAINT PK_SituacaoOrcamento PRIMARY KEY (SituacaoOrcamentoID)	
+)
+
+INSERT INTO SituacaoOrcamento Values(1, 'Aberto');
+INSERT INTO SituacaoOrcamento Values(2, 'Recebido');
+INSERT INTO SituacaoOrcamento Values(3, 'Cancelado');
+
+CREATE TABLE Orcamento (
+	OrcamentoID				INT NOT NULL IDENTITY(1,1),
+	FornecedorID			INT NOT NULL,
+	SituacaoOrcamentoID		SMALLINT NOT NULL,
+	DataPedido				DateTime,	
+	Valor					Decimal(15,2) NOT NULL,
+	CONSTRAINT PK_Orcamento PRIMARY KEY (OrcamentoID),
+	CONSTRAINT FK_Orcamento_Fornecedor FOREIGN KEY (FornecedorID) REFERENCES Fornecedor (FornecedorID),
+	CONSTRAINT FK_Orcamento_SituacaoOrcamento FOREIGN KEY (SituacaoOrcamentoID) REFERENCES SituacaoOrcamento (SituacaoOrcamentoID)
+)
+
+CREATE TABLE ItemOrcamento (
+	ItemOrcamentoID			INT NOT NULL IDENTITY(1,1),
+	OrcamentoID				INT NOT NULL,
+	ProdutoID				INT NOT NULL,
+	Quantidade				DECIMAL(15,4) NOT NULL,
+	Valor					DECIMAL(15,4) NOT NULL,
+	CONSTRAINT PK_ItemOrcamento PRIMARY KEY (ItemOrcamentoID),
+	CONSTRAINT FK_ItemOrcamento_Orcamento FOREIGN KEY (OrcamentoID) REFERENCES Orcamento (OrcamentoID),
+	CONSTRAINT FK_ItemOrcamento_Produto FOREIGN KEY (ProdutoID) REFERENCES Produto (ProdutoID)
+)
+
+CREATE TABLE Entrega (
+	EntregaID				INT NOT NULL IDENTITY(1,1),
+	VeiculoID				INT NOT NULL,	
+	DataEntrega				DateTime,		
+	CONSTRAINT PK_Entrega PRIMARY KEY (EntregaID),
+	CONSTRAINT FK_Entrega_Veiculo FOREIGN KEY (VeiculoID) REFERENCES Veiculo (VeiculoID)	
+)
+
+CREATE TABLE ItemEntrega (
+	ItemEntregaID			INT NOT NULL IDENTITY(1,1),
+	EntregaID				INT NOT NULL,
+	PedidoID				INT NOT NULL,
+	CONSTRAINT PK_ItemEntrega PRIMARY KEY (ItemEntregaID),
+	CONSTRAINT FK_ItemEntrega_Pedido FOREIGN KEY (PedidoID) REFERENCES Pedido (PedidoID),
+	CONSTRAINT FK_ItemEntrega_Entrega FOREIGN KEY (EntregaID) REFERENCES Entrega (EntregaID)
+)

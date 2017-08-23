@@ -204,6 +204,16 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\backend-tcc.bs.administrador\backend-tcc.bs.administrador.csproj">
+      <Project>{23722B8A-FDD4-47A7-BEA3-077ACB0207FC}</Project>
+      <Name>backend-tcc.bs.administrador</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\backend-tcc.lib.repository\backend-tcc.lib.repository.csproj">
+      <Project>{3248BC83-0756-4B9B-A7C0-310EF0C91CDA}</Project>
+      <Name>backend-tcc.lib.repository</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

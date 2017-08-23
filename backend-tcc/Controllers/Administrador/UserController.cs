@@ -1,30 +1,31 @@
-﻿using backend_tcc.ms.administrador.Models;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
-using System.Web.Http.Results;
+using backend_tcc.bs.administrador.Class;
+using backend_tcc.lib.repository.Class;
+using backend_tcc.lib.repository.Repository;
 
 namespace backend_tcc.ms.administrador.Controllers
 {
+    /// <summary>
+    /// Api de Usuários
+    /// </summary>
     [RoutePrefix("api/user")]
+    [Authorize]
     public class UserController : ApiController
-    {
-
+    {        
+        private UnitOfWork unitOfWork = new UnitOfWork(new EFDbContext());
         /// <summary>
         /// Responsável por criar um novo usuário
         /// </summary>
         /// <returns>Nova instância de usuário</returns>
-        [Route("Create")]
-        [ResponseType(typeof(UserModel))]
-        [HttpPost]
-        public async Task<JsonResult<UserModel>> Create()
+        [Route("create")]
+        [ResponseType(typeof(Usuario))]
+        [HttpGet]
+        public Usuario Create()
         {                        
-            return Json(new UserModel());
+            return new Usuario();
         }
 
         /// <summary>
@@ -32,38 +33,62 @@ namespace backend_tcc.ms.administrador.Controllers
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        [Route("Get")]
-        [ResponseType(typeof(UserModel))]
+        [ResponseType(typeof(Usuario))]
         [HttpGet]
-        public UserModel Get(string user)
+        public Usuario Get(string user)
         {
-            return new UserModel
-            {
-                UserName = user,
-                Email = $"{user}@email.com",
-                Name = $"Name of {user}"
-            };
+            
+            var usuario = unitOfWork.Repository<Usuario>().GetById(user);
+
+            return usuario;
+        }
+
+        /// <summary>
+        /// Responsável por buscar lista de usuários
+        /// </summary>        
+        /// <returns></returns>
+        [Route("usuarios")]
+        [ResponseType(typeof(IList<Usuario>))]
+        [HttpGet]
+        public IList<Usuario> Usuarios()
+        {            
+            var usuarios = unitOfWork.Repository<Usuario>().Table.ToList();
+
+            return usuarios;
         }
 
         /// <summary>
         /// Responsável por atualizar o usuário
         /// </summary>
         /// <param name="user">Usuário</param>
-        /// <returns></returns>
-        [Route("Put")]
-        [ResponseType(typeof(UserModel))]
-        public UserModel Put(UserModel user)
-        {
-            throw new NotImplementedException();
+        /// <returns></returns>        
+        [HttpPut]
+        public string Put(Usuario user)
+        {            
+            var rep = unitOfWork.Repository<Usuario>();
+            rep.Update(user);
+            unitOfWork.Save();
+            return "Usuário Atualizado com sucesso";
         }
-                        
+
         /// <summary>
         /// Responsável por excluir o usuário
         /// </summary>
-        /// <param name="user">Usuário</param>
+        /// <param name="userName">Usuário</param>
         /// <returns></returns>
-        public string Delete(string user)
+        [HttpDelete]
+        public string Delete(string userName)
         {
+            var rep = unitOfWork.Repository<Usuario>();
+            var user = rep.GetById(userName);
+            if (user != null)
+            {
+                rep.Delete(user);
+                unitOfWork.Save();
+            }
+            else
+                return "Usuário não encontrado";
+
             return "User deleted";
         }
 
@@ -71,13 +96,28 @@ namespace backend_tcc.ms.administrador.Controllers
         /// Responsável por gravar usuário
         /// </summary>
         /// <param name="user">Usuário</param>
-        /// <returns></returns>
-        [Route("Post")]
-        [ResponseType(typeof(UserModel))]
+        /// <returns></returns>        
         [HttpPost]
-        public async Task<JsonResult<UserModel>> Create(UserModel user)
+        public string Post(Usuario user)
         {
-            return Json(user);
+            var rep = unitOfWork.Repository<Usuario>();
+
+            var userAux = rep.GetById(user.UsuarioID);
+            if(userAux != null)
+            {
+                userAux.Ativo = user.Ativo;
+                userAux.Email = user.Email;
+                userAux.Nome = user.Nome;
+                userAux.Senha = user.Senha;
+                rep.Update(userAux);
+            }
+            else
+            {
+                rep.Insert(user);
+            }
+
+            unitOfWork.Save();
+            return "Usuário gravado com sucesso";
         }
     }
 }
