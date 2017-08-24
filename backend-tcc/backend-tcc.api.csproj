@@ -209,9 +209,37 @@
       <Project>{23722B8A-FDD4-47A7-BEA3-077ACB0207FC}</Project>
       <Name>backend-tcc.bs.administrador</Name>
     </ProjectReference>
+    <ProjectReference Include="..\backend-tcc.bs.common\backend-tcc.bs.common.csproj">
+      <Project>{FDA0BA55-1453-4F44-9B38-EC7F2E9104D0}</Project>
+      <Name>backend-tcc.bs.common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\backend-tcc.bs.compras\backend-tcc.bs.compras.csproj">
+      <Project>{0238C2EE-3FD3-4259-B6AF-F35065A16BFC}</Project>
+      <Name>backend-tcc.bs.compras</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\backend-tcc.bs.estoque\backend-tcc.bs.estoque.csproj">
+      <Project>{9EEE7543-6B9E-436A-B3C5-4B8207F2EC59}</Project>
+      <Name>backend-tcc.bs.estoque</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\backend-tcc.bs.logistica\backend-tcc.bs.logistica.csproj">
+      <Project>{33acf37e-63ca-47d6-9f91-bd54847c685d}</Project>
+      <Name>backend-tcc.bs.logistica</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\backend-tcc.bs.marketing\backend-tcc.bs.marketing.csproj">
+      <Project>{5a41174a-8a57-4719-aa11-f5ff9f557a34}</Project>
+      <Name>backend-tcc.bs.marketing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\backend-tcc.bs.vendas\backend-tcc.bs.vendas.csproj">
+      <Project>{1dfb91b6-6ad9-4515-8f21-b66753e31885}</Project>
+      <Name>backend-tcc.bs.vendas</Name>
+    </ProjectReference>
     <ProjectReference Include="..\backend-tcc.lib.repository\backend-tcc.lib.repository.csproj">
       <Project>{3248BC83-0756-4B9B-A7C0-310EF0C91CDA}</Project>
       <Name>backend-tcc.lib.repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\backend-tcc.lib\backend-tcc.lib.csproj">
+      <Project>{5a867196-4637-4e90-8390-19c74c0c9a49}</Project>
+      <Name>backend-tcc.lib</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -100,3 +100,5 @@ C:\Desenvolvimento\github\backend-tcc\backend-tcc\bin\backend-tcc.bs.marketing.p
 C:\Desenvolvimento\github\backend-tcc\backend-tcc\bin\backend-tcc.bs.logistica.pdb
 C:\Desenvolvimento\github\backend-tcc\backend-tcc\bin\backend-tcc.bs.compras.pdb
 C:\Desenvolvimento\github\backend-tcc\backend-tcc\bin\backend-tcc.bs.common.pdb
+C:\Desenvolvimento\github\backend-tcc\backend-tcc\bin\backend-tcc.lib.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc\bin\backend-tcc.lib.pdb

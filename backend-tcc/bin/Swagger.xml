@@ -26,6 +26,96 @@
             <param name="password">Senha</param>
             <returns>Token de acesso a API</returns>
         </member>
+        <member name="T:backend_tcc.ms.administrador.Controllers.FornecedorController">
+            <summary>
+            Api de Fornecedores
+            </summary>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.FornecedorController.Create">
+            <summary>
+            Responsável por criar um novo fornecedor
+            </summary>
+            <returns>Nova instância de fornecedor</returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.FornecedorController.Get(System.Int32)">
+            <summary>
+            Responsável por buscar o fornecedor
+            </summary>
+            <param name="id">Código identificado do fornecedor</param>
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.FornecedorController.Fornecedores">
+            <summary>
+            Responsável por buscar lista de fornecedores
+            </summary>        
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.FornecedorController.Put(backend_tcc.bs.common.Class.Fornecedor)">
+            <summary>
+            Responsável por atualizar o fornecedor
+            </summary>
+            <param name="obj">Fornecedor</param>
+            <returns></returns>        
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.FornecedorController.Delete(System.Int32)">
+            <summary>
+            Responsável por excluir o fornecedor
+            </summary>
+            <param name="id">Fornecedor</param>
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.FornecedorController.Post(backend_tcc.bs.common.Class.Fornecedor)">
+            <summary>
+            Responsável por gravar fornecedor
+            </summary>
+            <param name="obj">Fornecedor</param>
+            <returns></returns>        
+        </member>
+        <member name="T:backend_tcc.ms.administrador.Controllers.OrcamentoController">
+            <summary>
+            Orçamentos de Fornecedores
+            </summary>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.OrcamentoController.Create">
+            <summary>
+            Responsável por criar um novo orçamento
+            </summary>
+            <returns>Nova instância de orçamento</returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.OrcamentoController.Get(System.Int32)">
+            <summary>
+            Responsável por buscar o orçamento
+            </summary>
+            <param name="id">Código identificado do orçamento</param>
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.OrcamentoController.Orcamentos">
+            <summary>
+            Responsável por buscar lista de orçamentos
+            </summary>        
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.OrcamentoController.Put(backend_tcc.bs.compras.Class.Orcamento)">
+            <summary>
+            Responsável por atualizar o orçamento
+            </summary>
+            <param name="obj">Orcamento</param>
+            <returns></returns>        
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.OrcamentoController.Delete(System.Int32)">
+            <summary>
+            Responsável por excluir o orçamento
+            </summary>
+            <param name="id">Orcamento</param>
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.OrcamentoController.Post(backend_tcc.bs.compras.Class.Orcamento)">
+            <summary>
+            Responsável por gravar orçamento
+            </summary>
+            <param name="obj">Orcamento</param>
+            <returns></returns>        
+        </member>
         <member name="T:backend_tcc.ms.administrador.Controllers.UserController">
             <summary>
             Api de Usuários
@@ -69,6 +159,83 @@
             Responsável por gravar usuário
             </summary>
             <param name="user">Usuário</param>
+            <returns></returns>        
+        </member>
+        <member name="T:backend_tcc.ms.administrador.Controllers.EstoqueController">
+            <summary>
+            Api de Estoque dos produtos
+            </summary>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.EstoqueController.Get(System.Int32)">
+            <summary>
+            Responsável por buscar o estoque do produto
+            </summary>
+            <param name="id">Código produto</param>
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.EstoqueController.Estoques">
+            <summary>
+            Responsável por buscar lista de produtos e estoque
+            </summary>        
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.EstoqueController.Put(backend_tcc.bs.estoque.Class.Estoque)">
+            <summary>
+            Responsável por atualizar o estoque
+            </summary>
+            <param name="obj">Estoque</param>
+            <returns></returns>        
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.EstoqueController.Post(backend_tcc.bs.estoque.Class.Estoque)">
+            <summary>
+            Responsável por gravar estoque
+            </summary>
+            <param name="obj">Estoque</param>
+            <returns></returns>        
+        </member>
+        <member name="T:backend_tcc.ms.administrador.Controllers.ProdutoController">
+            <summary>
+            Api responsável pelos produtos
+            </summary>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.ProdutoController.Create">
+            <summary>
+            Responsável por criar um novo produto
+            </summary>
+            <returns>Nova instância de produto</returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.ProdutoController.Get(System.Int32)">
+            <summary>
+            Responsável por buscar o produto
+            </summary>
+            <param name="id">Código identificado do produto</param>
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.ProdutoController.Produtos">
+            <summary>
+            Responsável por buscar lista de produtos
+            </summary>        
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.ProdutoController.Put(backend_tcc.bs.estoque.Class.Produto)">
+            <summary>
+            Responsável por atualizar o produto
+            </summary>
+            <param name="obj">Produto</param>
+            <returns></returns>        
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.ProdutoController.Delete(System.Int32)">
+            <summary>
+            Responsável por excluir o produto
+            </summary>
+            <param name="id">Produto</param>
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.ProdutoController.Post(backend_tcc.bs.estoque.Class.Produto)">
+            <summary>
+            Responsável por gravar produto
+            </summary>
+            <param name="obj">Produto</param>
             <returns></returns>        
         </member>
     </members>
