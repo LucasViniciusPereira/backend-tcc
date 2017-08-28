@@ -1,0 +1,10 @@
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.marketing\bin\Release\backend-tcc.bs.marketing.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.marketing\bin\Release\backend-tcc.bs.marketing.pdb
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.marketing\bin\Release\backend-tcc.bs.common.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.marketing\bin\Release\backend-tcc.bs.estoque.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.marketing\bin\Release\backend-tcc.bs.common.pdb
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.marketing\bin\Release\backend-tcc.bs.estoque.pdb
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.marketing\obj\Release\backend-tcc.bs.marketing.csprojResolveAssemblyReference.cache
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.marketing\obj\Release\backend-tcc.bs.marketing.csproj.CoreCompileInputs.cache
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.marketing\obj\Release\backend-tcc.bs.marketing.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.marketing\obj\Release\backend-tcc.bs.marketing.pdb

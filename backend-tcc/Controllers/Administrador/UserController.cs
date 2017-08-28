@@ -47,10 +47,10 @@ namespace backend_tcc.ms.administrador.Controllers
         /// Responsável por buscar lista de usuários
         /// </summary>        
         /// <returns></returns>
-        [Route("usuarios")]
+        [Route("list")]
         [ResponseType(typeof(IList<Usuario>))]
         [HttpGet]
-        public IList<Usuario> Usuarios()
+        public IList<Usuario> List()
         {            
             var usuarios = unitOfWork.Repository<Usuario>().Table.ToList();
 

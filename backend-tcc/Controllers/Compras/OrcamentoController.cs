@@ -47,10 +47,10 @@ namespace backend_tcc.ms.administrador.Controllers
         /// Responsável por buscar lista de orçamentos
         /// </summary>        
         /// <returns></returns>
-        [Route("orcamentos")]
+        [Route("list")]
         [ResponseType(typeof(IList<Orcamento>))]
         [HttpGet]
-        public IList<Orcamento> Orcamentos()
+        public IList<Orcamento> List()
         {
             var itens = unitOfWork.Repository<Orcamento>().Table.ToList();
 

@@ -36,10 +36,10 @@ namespace backend_tcc.ms.administrador.Controllers
         /// Responsável por buscar lista de produtos e estoque
         /// </summary>        
         /// <returns></returns>
-        [Route("estoques")]
+        [Route("list")]
         [ResponseType(typeof(IList<Estoque>))]
         [HttpGet]
-        public IList<Estoque> Estoques()
+        public IList<Estoque> List()
         {
             var itens = unitOfWork.Repository<Estoque>().Table.ToList();
 

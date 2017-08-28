@@ -1,6 +1,6 @@
-C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib\obj\Debug\backend-tcc.lib.csprojResolveAssemblyReference.cache
-C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib\obj\Debug\backend-tcc.lib.csproj.CoreCompileInputs.cache
 C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib\bin\Debug\backend-tcc.lib.dll
 C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib\bin\Debug\backend-tcc.lib.pdb
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib\obj\Debug\backend-tcc.lib.csprojResolveAssemblyReference.cache
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib\obj\Debug\backend-tcc.lib.csproj.CoreCompileInputs.cache
 C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib\obj\Debug\backend-tcc.lib.dll
 C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib\obj\Debug\backend-tcc.lib.pdb

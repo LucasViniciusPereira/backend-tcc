@@ -1,0 +1,5 @@
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.administrador\bin\Release\backend-tcc.bs.administrador.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.administrador\bin\Release\backend-tcc.bs.administrador.pdb
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.administrador\obj\Release\backend-tcc.bs.administrador.csproj.CoreCompileInputs.cache
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.administrador\obj\Release\backend-tcc.bs.administrador.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.bs.administrador\obj\Release\backend-tcc.bs.administrador.pdb

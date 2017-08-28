@@ -1,2 +1,0 @@
-C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib.repository.ef\obj\Debug\backend-tcc.lib.repository.ef.csprojResolveAssemblyReference.cache
-C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib.repository.ef\obj\Debug\backend-tcc.lib.repository.ef.csproj.CoreCompileInputs.cache

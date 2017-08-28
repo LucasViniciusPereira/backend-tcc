@@ -47,10 +47,10 @@ namespace backend_tcc.ms.administrador.Controllers
         /// Responsável por buscar lista de fornecedores
         /// </summary>        
         /// <returns></returns>
-        [Route("forncedores")]
+        [Route("list")]
         [ResponseType(typeof(IList<Fornecedor>))]
         [HttpGet]
-        public IList<Fornecedor> Fornecedores()
+        public IList<Fornecedor> List()
         {
             var itens = unitOfWork.Repository<Fornecedor>().Table.ToList();
 

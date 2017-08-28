@@ -47,10 +47,10 @@ namespace backend_tcc.ms.administrador.Controllers
         /// Responsável por buscar lista de produtos
         /// </summary>        
         /// <returns></returns>
-        [Route("produtos")]
+        [Route("list")]
         [ResponseType(typeof(IList<Produto>))]
         [HttpGet]
-        public IList<Produto> Produtos()
+        public IList<Produto> List()
         {
             var itens = unitOfWork.Repository<Produto>().Table.ToList();
 
