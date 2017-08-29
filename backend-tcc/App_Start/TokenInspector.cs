@@ -32,7 +32,7 @@ namespace backend_tcc.api.App_Start
             HttpResponseMessage reply;
 
             IEnumerable<string> keys = null;
-            if (request.Headers.TryGetValues("Token", out keys) && !string.IsNullOrEmpty(keys.First()))
+            if (request.Headers.TryGetValues("token", out keys) && !string.IsNullOrEmpty(keys.First()))
             {
                 try
                 {

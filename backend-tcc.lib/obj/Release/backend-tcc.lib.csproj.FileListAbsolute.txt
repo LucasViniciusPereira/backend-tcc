@@ -3,3 +3,4 @@ C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib\bin\Release\backend-tcc.li
 C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib\obj\Release\backend-tcc.lib.csproj.CoreCompileInputs.cache
 C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib\obj\Release\backend-tcc.lib.dll
 C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib\obj\Release\backend-tcc.lib.pdb
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.lib\obj\Release\backend-tcc.lib.csprojResolveAssemblyReference.cache

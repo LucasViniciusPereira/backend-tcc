@@ -2,6 +2,7 @@
 using System.Net.Http.Formatting;
 using System.Web.Http;
 using backend_tcc.api.App_Start;
+using System.Web.Http.Cors;
 
 namespace backend_tcc
 {
@@ -9,8 +10,11 @@ namespace backend_tcc
     {
         public static void Register(HttpConfiguration config)
         {
+            var cors = new EnableCorsAttribute("*", "Content-Type", "GET, POST, PUT, DELETE", "Token");
+            config.EnableCors(cors);
             // Web API configuration and services
 
+            config.MessageHandlers.Add(new PreflightRequestsHandler());
             config.MessageHandlers.Add(new TokenInspector());
 
             // Web API routes
