@@ -9,15 +9,6 @@
             Api de Autenticação
             </summary>
         </member>
-        <member name="M:backend_tcc.Controllers.AccountController.Register(backend_tcc.Models.RegisterBindingModel)">
-            <summary>
-            Register a new user on application
-            </summary>
-            <param name="user">New user to register</param>
-            <remarks>Adds new user to application and grant access</remarks>
-            <response code="400">Bad Request</response>
-            <response code="500">Internal Server Error</response>
-        </member>
         <member name="M:backend_tcc.Controllers.AccountController.Authenticate(System.String,System.String)">
             <summary>
             Realizar a autenticação dos usuários
@@ -44,7 +35,7 @@
             <param name="id">Código identificado do fornecedor</param>
             <returns></returns>
         </member>
-        <member name="M:backend_tcc.ms.administrador.Controllers.FornecedorController.Fornecedores">
+        <member name="M:backend_tcc.ms.administrador.Controllers.FornecedorController.List">
             <summary>
             Responsável por buscar lista de fornecedores
             </summary>        
@@ -89,7 +80,7 @@
             <param name="id">Código identificado do orçamento</param>
             <returns></returns>
         </member>
-        <member name="M:backend_tcc.ms.administrador.Controllers.OrcamentoController.Orcamentos">
+        <member name="M:backend_tcc.ms.administrador.Controllers.OrcamentoController.List">
             <summary>
             Responsável por buscar lista de orçamentos
             </summary>        
@@ -134,7 +125,7 @@
             <param name="user"></param>
             <returns></returns>
         </member>
-        <member name="M:backend_tcc.ms.administrador.Controllers.UserController.Usuarios">
+        <member name="M:backend_tcc.ms.administrador.Controllers.UserController.List">
             <summary>
             Responsável por buscar lista de usuários
             </summary>        
@@ -173,7 +164,7 @@
             <param name="id">Código produto</param>
             <returns></returns>
         </member>
-        <member name="M:backend_tcc.ms.administrador.Controllers.EstoqueController.Estoques">
+        <member name="M:backend_tcc.ms.administrador.Controllers.EstoqueController.List">
             <summary>
             Responsável por buscar lista de produtos e estoque
             </summary>        
@@ -211,7 +202,7 @@
             <param name="id">Código identificado do produto</param>
             <returns></returns>
         </member>
-        <member name="M:backend_tcc.ms.administrador.Controllers.ProdutoController.Produtos">
+        <member name="M:backend_tcc.ms.administrador.Controllers.ProdutoController.List">
             <summary>
             Responsável por buscar lista de produtos
             </summary>        
@@ -236,6 +227,276 @@
             Responsável por gravar produto
             </summary>
             <param name="obj">Produto</param>
+            <returns></returns>        
+        </member>
+        <member name="T:backend_tcc.ms.administrador.Controllers.EntregaController">
+            <summary>
+            API responsável por entregas
+            </summary>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.EntregaController.Create">
+            <summary>
+            Responsável por criar um nova entrega
+            </summary>
+            <returns>Nova instância de entrega</returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.EntregaController.Get(System.Int32)">
+            <summary>
+            Responsável por buscar entrega
+            </summary>
+            <param name="id">Código identificado da entrega</param>
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.EntregaController.List">
+            <summary>
+            Responsável por buscar lista de entrega
+            </summary>        
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.EntregaController.Put(backend_tcc.bs.logistica.Class.Entrega)">
+            <summary>
+            Responsável por atualizar entrega
+            </summary>
+            <param name="obj">Entrega</param>
+            <returns></returns>        
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.EntregaController.Delete(System.Int32)">
+            <summary>
+            Responsável por excluir entrega
+            </summary>
+            <param name="id">Entrega</param>
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.EntregaController.Post(backend_tcc.bs.logistica.Class.Entrega)">
+            <summary>
+            Responsável por gravar entrega
+            </summary>
+            <param name="obj">Entrega</param>
+            <returns></returns>        
+        </member>
+        <member name="T:backend_tcc.ms.administrador.Controllers.VeiculoController">
+            <summary>
+            API responsável por veículos
+            </summary>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.VeiculoController.Create">
+            <summary>
+            Responsável por criar um novo veículo
+            </summary>
+            <returns>Nova instância de veículo</returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.VeiculoController.Get(System.Int32)">
+            <summary>
+            Responsável por buscar o veículo
+            </summary>
+            <param name="id">Código identificado do veículo</param>
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.VeiculoController.List">
+            <summary>
+            Responsável por buscar lista de veículos
+            </summary>        
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.VeiculoController.Put(backend_tcc.bs.logistica.Class.Veiculo)">
+            <summary>
+            Responsável por atualizar o veículo
+            </summary>
+            <param name="obj">Veiculo</param>
+            <returns></returns>        
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.VeiculoController.Delete(System.Int32)">
+            <summary>
+            Responsável por excluir o veículo
+            </summary>
+            <param name="id">Veiculo</param>
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.VeiculoController.Post(backend_tcc.bs.logistica.Class.Veiculo)">
+            <summary>
+            Responsável por gravar veículo
+            </summary>
+            <param name="obj">Veiculo</param>
+            <returns></returns>        
+        </member>
+        <member name="T:backend_tcc.ms.administrador.Controllers.PromocaoController">
+            <summary>
+            API responsável por promoção
+            </summary>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.PromocaoController.Create">
+            <summary>
+            Responsável por criar um nova promoção
+            </summary>
+            <returns>Nova instância de promoção</returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.PromocaoController.Get(System.Int32)">
+            <summary>
+            Responsável por buscar promoção
+            </summary>
+            <param name="id">Código identificado da promoção</param>
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.PromocaoController.List">
+            <summary>
+            Responsável por buscar lista de promoção
+            </summary>        
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.PromocaoController.Put(backend_tcc.bs.marketing.Class.Promocao)">
+            <summary>
+            Responsável por atualizar promoção
+            </summary>
+            <param name="obj">Promocao</param>
+            <returns></returns>        
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.PromocaoController.Delete(System.Int32)">
+            <summary>
+            Responsável por excluir promoção
+            </summary>
+            <param name="id">Promocao</param>
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.PromocaoController.Post(backend_tcc.bs.marketing.Class.Promocao)">
+            <summary>
+            Responsável por gravar promoção
+            </summary>
+            <param name="obj">Promocao</param>
+            <returns></returns>        
+        </member>
+        <member name="T:backend_tcc.ms.administrador.Controllers.PropagandaController">
+            <summary>
+            API responsável por propaganda
+            </summary>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.PropagandaController.Create">
+            <summary>
+            Responsável por criar um nova propaganda
+            </summary>
+            <returns>Nova instância de propaganda</returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.PropagandaController.Get(System.Int32)">
+            <summary>
+            Responsável por buscar propaganda
+            </summary>
+            <param name="id">Código identificado da propaganda</param>
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.PropagandaController.List">
+            <summary>
+            Responsável por buscar lista de propagandas
+            </summary>        
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.PropagandaController.Put(backend_tcc.bs.marketing.Class.Propaganda)">
+            <summary>
+            Responsável por atualizar propaganda
+            </summary>
+            <param name="obj">Propaganda</param>
+            <returns></returns>        
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.PropagandaController.Delete(System.Int32)">
+            <summary>
+            Responsável por excluir propaganda
+            </summary>
+            <param name="id">Propaganda</param>
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.PropagandaController.Post(backend_tcc.bs.marketing.Class.Propaganda)">
+            <summary>
+            Responsável por gravar propaganda
+            </summary>
+            <param name="obj">Propaganda</param>
+            <returns></returns>        
+        </member>
+        <member name="T:backend_tcc.ms.administrador.Controllers.ClienteController">
+            <summary>
+            API responsável por Clientes
+            </summary>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.ClienteController.Create">
+            <summary>
+            Responsável por criar um novo cliente
+            </summary>
+            <returns>Nova instância de cliente</returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.ClienteController.Get(System.Int32)">
+            <summary>
+            Responsável por buscar o cliente
+            </summary>
+            <param name="id">Código identificado do cliente</param>
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.ClienteController.List">
+            <summary>
+            Responsável por buscar lista de clientes
+            </summary>        
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.ClienteController.Put(backend_tcc.bs.common.Class.Cliente)">
+            <summary>
+            Responsável por atualizar o cliente
+            </summary>
+            <param name="obj">Cliente</param>
+            <returns></returns>        
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.ClienteController.Delete(System.Int32)">
+            <summary>
+            Responsável por excluir o cliente
+            </summary>
+            <param name="id">Cliente</param>
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.ClienteController.Post(backend_tcc.bs.common.Class.Cliente)">
+            <summary>
+            Responsável por gravar cliente
+            </summary>
+            <param name="obj">Cliente</param>
+            <returns></returns>        
+        </member>
+        <member name="T:backend_tcc.ms.administrador.Controllers.PedidoController">
+            <summary>
+            API responsável por pedidos
+            </summary>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.PedidoController.Create">
+            <summary>
+            Responsável por criar um novo pedido
+            </summary>
+            <returns>Nova instância de pedido</returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.PedidoController.Get(System.Int32)">
+            <summary>
+            Responsável por buscar o pedido
+            </summary>
+            <param name="id">Código identificado do pedido</param>
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.PedidoController.List">
+            <summary>
+            Responsável por buscar lista de pedidos
+            </summary>        
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.PedidoController.Put(backend_tcc.bs.vendas.Class.Pedido)">
+            <summary>
+            Responsável por atualizar o pedido
+            </summary>
+            <param name="obj">Pedido</param>
+            <returns></returns>        
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.PedidoController.Delete(System.Int32)">
+            <summary>
+            Responsável por excluir o pedido
+            </summary>
+            <param name="id">Pedido</param>
+            <returns></returns>
+        </member>
+        <member name="M:backend_tcc.ms.administrador.Controllers.PedidoController.Post(backend_tcc.bs.vendas.Class.Pedido)">
+            <summary>
+            Responsável por gravar pedido
+            </summary>
+            <param name="obj">Pedido</param>
             <returns></returns>        
         </member>
     </members>

@@ -10,7 +10,7 @@ namespace backend_tcc.lib.repository.Configuration.Marketing
         {
             HasKey(c => c.ItemPromocaoID);
             Property(c => c.ItemPromocaoID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Map(c => c.ToTable("ItemPromocao"));
+            Map(c => c.ToTable("ItemPromocao", "api"));
 
             HasRequired(c => c.Promocao)
                 .WithMany()

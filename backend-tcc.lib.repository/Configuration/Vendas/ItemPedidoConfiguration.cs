@@ -10,7 +10,7 @@ namespace backend_tcc.lib.repository.Configuration.Vendas
         {
             HasKey(c => c.ItemPedidoID);
             Property(c => c.ItemPedidoID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Map(c => c.ToTable("ItemPedido"));
+            Map(c => c.ToTable("ItemPedido", "api"));
 
             HasRequired(c => c.Pedido)
                 .WithMany()

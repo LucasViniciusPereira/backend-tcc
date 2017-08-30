@@ -10,7 +10,7 @@ namespace backend_tcc.lib.repository.Configuration.Common
         {
             HasKey(c => c.FabricanteID);
             Property(c => c.FabricanteID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Map(c => c.ToTable("Fabricante"));
+            Map(c => c.ToTable("Fabricante", "api"));
         }
     }
 }

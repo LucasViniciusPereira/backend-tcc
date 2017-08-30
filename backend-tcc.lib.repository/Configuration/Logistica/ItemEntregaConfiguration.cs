@@ -10,7 +10,7 @@ namespace backend_tcc.lib.repository.Configuration.Logistica
         {
             HasKey(c => c.ItemEntregaID);
             Property(c => c.ItemEntregaID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Map(c => c.ToTable("ItemEntrega"));
+            Map(c => c.ToTable("ItemEntrega", "api"));
 
             HasRequired(c => c.Entrega)
                 .WithMany()

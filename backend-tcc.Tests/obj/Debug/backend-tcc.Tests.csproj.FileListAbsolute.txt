@@ -83,3 +83,6 @@ C:\Desenvolvimento\github\backend-tcc\backend-tcc.Tests\obj\Debug\backend-tcc.Te
 C:\Desenvolvimento\github\backend-tcc\backend-tcc.Tests\obj\Debug\backend-tcc.Tests.csproj.CoreCompileInputs.cache
 C:\Desenvolvimento\github\backend-tcc\backend-tcc.Tests\obj\Debug\backend-tcc.Tests.dll
 C:\Desenvolvimento\github\backend-tcc\backend-tcc.Tests\obj\Debug\backend-tcc.Tests.pdb
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.Tests\bin\Debug\System.Web.Http.Cors.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.Tests\bin\Debug\System.Web.Cors.dll
+C:\Desenvolvimento\github\backend-tcc\backend-tcc.Tests\bin\Debug\System.Web.Http.Cors.xml

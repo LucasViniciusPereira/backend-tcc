@@ -10,7 +10,7 @@ namespace backend_tcc.lib.repository.Configuration.Compras
         {
             HasKey(c => c.OrcamentoID);
             Property(c => c.OrcamentoID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Map(c => c.ToTable("Orcamento"));
+            Map(c => c.ToTable("Orcamento", "api"));
 
             HasRequired(c => c.Fornecedor)
                 .WithMany()

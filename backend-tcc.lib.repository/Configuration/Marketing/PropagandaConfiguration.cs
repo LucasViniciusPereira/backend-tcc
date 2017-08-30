@@ -10,7 +10,7 @@ namespace backend_tcc.lib.repository.Configuration.Marketing
         {
             HasKey(c => c.PropagandaID);
             Property(c => c.PropagandaID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Map(c => c.ToTable("Propaganda"));            
+            Map(c => c.ToTable("Propaganda", "api"));            
         }
     }
 }

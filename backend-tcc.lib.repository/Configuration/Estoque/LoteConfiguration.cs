@@ -10,7 +10,7 @@ namespace backend_tcc.lib.repository.Configuration
         {
             HasKey(c => c.LoteID);
             Property(c => c.LoteID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Map(c => c.ToTable("Lote"));
+            Map(c => c.ToTable("Lote", "api"));
 
             HasRequired(c => c.Fabricante)
                 .WithMany()
