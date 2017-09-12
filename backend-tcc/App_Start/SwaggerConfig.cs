@@ -2,6 +2,7 @@ using System.Web.Http;
 using WebActivatorEx;
 using backend_tcc;
 using Swashbuckle.Application;
+using backend_tcc.api.App_Start;
 
 //[assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -13,7 +14,7 @@ namespace backend_tcc
         {
             var thisAssembly = typeof(SwaggerConfig).Assembly;
 
-            GlobalConfiguration.Configuration
+            GlobalConfiguration.Configuration                
                 .EnableSwagger(c =>
                     {
                         // By default, the service root url is inferred from the request used to access the docs.
@@ -32,7 +33,12 @@ namespace backend_tcc
                         // hold additional metadata for an API. Version and title are required but you can also provide
                         // additional fields by chaining methods off SingleApiVersion.
                         //
-                        c.SingleApiVersion("v1", "backend_tcc");
+                        c.SingleApiVersion("v1", "API TCC Wilson Donizetti")
+                        .Description("TCC Wilson Donizetti - Arquitetura de sistemas distribuídos")
+                        .Contact(cc => cc
+                                .Name("Wilson Donizetti de Noronha Junior")
+                                .Email("wilsondonizetti@hotmail.com")
+                                .Url("http://wilsondonizetti.eti.br"));
 
                         // If you want the output Swagger docs to be indented properly, enable the "PrettyPrint" option.
                         //
@@ -61,7 +67,7 @@ namespace backend_tcc
                         //c.BasicAuth("basic")
                         //    .Description("Basic HTTP Authentication");
                         //
-						// NOTE: You must also configure 'EnableApiKeySupport' below in the SwaggerUI section
+                        // NOTE: You must also configure 'EnableApiKeySupport' below in the SwaggerUI section
                         //c.ApiKey("apiKey")
                         //    .Description("API Key Authentication")
                         //    .Name("apiKey")
@@ -151,6 +157,7 @@ namespace backend_tcc
                         // Operation filters.
                         //
                         //c.OperationFilter<AddDefaultResponse>();
+                        c.OperationFilter(() => new AddRequiredHeaderParameter());
                         //
                         // If you've defined an OAuth2 flow as described above, you could use a custom filter
                         // to inspect some attribute on each action and infer which (if any) OAuth2 scopes are required

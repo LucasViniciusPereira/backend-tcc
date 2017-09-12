@@ -3,6 +3,7 @@ using System.Net.Http.Formatting;
 using System.Web.Http;
 using backend_tcc.api.App_Start;
 using System.Web.Http.Cors;
+using Swashbuckle.Application;
 
 namespace backend_tcc
 {
@@ -26,6 +27,13 @@ namespace backend_tcc
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            //config.Routes.MapHttpRoute(
+            //name: "help_ui_shortcut",
+            //routeTemplate: "help",
+            //defaults: null,
+            //constraints: null,
+            //handler: new RedirectHandler(SwaggerDocsConfig.DefaultRootUrlResolver, "help/ui/index"));
 
             #region MediaTypeFormatter
 

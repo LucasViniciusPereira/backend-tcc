@@ -11,7 +11,7 @@ namespace backend_tcc.ms.administrador.Controllers
     /// <summary>
     /// Api de Fornecedores
     /// </summary>
-    [RoutePrefix("api/fornecedor")]
+    [RoutePrefix("api/fornecedor")]    
     [Authorize]
     public class FornecedorController : ApiController
     {
@@ -22,7 +22,7 @@ namespace backend_tcc.ms.administrador.Controllers
         /// <returns>Nova instância de fornecedor</returns>
         [Route("create")]
         [ResponseType(typeof(Fornecedor))]
-        [HttpGet]
+        [HttpGet]        
         public Fornecedor Create()
         {
             return new Fornecedor();
